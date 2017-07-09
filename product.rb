@@ -16,4 +16,9 @@ class Product
 
 # ==================== Instance Methods =====================
 
+  def total_price
+    total_price = @base_price + (@base_price * @tax_rate)
+    total_price.round(2)
+  end
+
 end
