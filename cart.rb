@@ -12,6 +12,10 @@ class Cart
 
 # ==================== Instance Methods =====================
 
+  def view_cart
+    @products
+  end
+
   def add_product(name, base_price, tax_rate)
     @products << Product.new(name, base_price, tax_rate)
     return @products.last
@@ -35,6 +39,14 @@ class Cart
     total = 0
     @products.each do |product|
       total += product.base_price
+    end
+    return total
+  end
+
+  def total_with_tax
+    total = 0
+    @products.each do |product|
+      total += product.total_price
     end
     return total
   end
