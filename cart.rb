@@ -31,4 +31,12 @@ class Cart
     @products
   end
 
+  def total_before_tax
+    total = 0
+    @products.each do |product|
+      total += product.base_price
+    end
+    return total
+  end
+
 end
